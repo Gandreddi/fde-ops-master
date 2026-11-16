@@ -6,6 +6,7 @@ from opsclient.errors import (
     OpsClientError,
     OpsConnectionError,
     OpsNotFoundError,
+    OpsServerError,
     OpsValidationError,
 )
 from opsclient.models import NewPost, Post, User
@@ -17,6 +18,7 @@ __all__ = [
     "OpsClientError",
     "OpsConnectionError",
     "OpsNotFoundError",
+    "OpsServerError",
     "OpsValidationError",
     "Post",
     "User",

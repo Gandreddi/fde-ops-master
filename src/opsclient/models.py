@@ -1,6 +1,6 @@
 """Pydantic models: the shape of the data the API sends and accepts."""
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import AliasChoices, BaseModel, ConfigDict, Field
 
 
 class User(BaseModel):
@@ -8,7 +8,8 @@ class User(BaseModel):
 
     id: int
     name: str
-    username: str
+    # The API is renaming "username" to "handle". Accept either while both are in use.
+    username: str = Field(validation_alias=AliasChoices("username", "handle"))
     email: str
 
 

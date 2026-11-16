@@ -21,5 +21,9 @@ class OpsNotFoundError(OpsApiError):
     """The server answered 404: the thing you asked for does not exist."""
 
 
+class OpsServerError(OpsApiError):
+    """The server answered 5xx: it is broken or busy, so trying again may work."""
+
+
 class OpsValidationError(OpsClientError):
     """The server's answer did not have the shape we expected."""
